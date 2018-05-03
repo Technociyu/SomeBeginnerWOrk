@@ -1,0 +1,61 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+        class RandomDude
+        {
+            static void Main(string[] args)
+            {
+                Random randomObject = new Random();
+
+                while (true)
+                {
+                    string nameString = GetNameUser();
+                    if (nameString.Length == 0)
+                    {
+                        Console.WriteLine("Please enter a name..");
+                        continue;
+                    }
+                    if (nameString.ToLower() == "no")
+                    {
+                        Console.WriteLine(":,(");
+                    }
+                    int randomName = randomObject.Next(5);
+                    switch (randomName)
+                    {
+                        case 0:
+                            {
+                                Console.WriteLine("Correct");
+                                break;
+                            }
+                        case 1:
+                            {
+                                Console.WriteLine("WRONG");
+                                break;
+                            }
+                    }
+                }
+            }
+
+            static string GetNameUser()
+            {
+                Console.WriteLine("Console Application Generator");
+                Console.WriteLine("Here are the name list (Attempt to guess what name):");
+                Console.WriteLine("John");
+                Console.WriteLine("Benny");
+                Console.WriteLine("Enrique");
+                Console.WriteLine("Steven");
+                Console.WriteLine("Jane");
+                Console.WriteLine("-----------------------");
+                string nameString = Console.ReadLine();
+
+                return nameString;
+            }
+
+
+        }
+    }
+}
